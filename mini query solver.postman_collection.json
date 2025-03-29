@@ -1,0 +1,208 @@
+{
+	"info": {
+		"_postman_id": "fd8ad29b-0209-4410-8924-d487e9cf8acd",
+		"name": "mini query solver",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40902627"
+	},
+	"item": [
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// Extract token from the response\r",
+							"var responseData = pm.response.json();\r",
+							"if (responseData.token) {\r",
+							"    pm.collectionVariables.set(\"authToken\", responseData.token);\r",
+							"}"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"username\": \"admin\",\r\n  \"password\": \"password\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mini-data-query-simulation-engine-4t04.onrender.com/api/auth/login",
+					"protocol": "https",
+					"host": [
+						"mini-data-query-simulation-engine-4t04",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "query",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{authToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"question\": \"users with age greater than 25\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mini-data-query-simulation-engine-4t04.onrender.com/api/query/",
+					"protocol": "https",
+					"host": [
+						"mini-data-query-simulation-engine-4t04",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"query",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "explain",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{authToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"question\": \"users with age greater than 25\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mini-data-query-simulation-engine-4t04.onrender.com/api/query/explain",
+					"protocol": "https",
+					"host": [
+						"mini-data-query-simulation-engine-4t04",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"query",
+						"explain"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "validate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "{{authToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"question\": \"users with age greater than 25\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://mini-data-query-simulation-engine-4t04.onrender.com/api/query/validate",
+					"protocol": "https",
+					"host": [
+						"mini-data-query-simulation-engine-4t04",
+						"onrender",
+						"com"
+					],
+					"path": [
+						"api",
+						"query",
+						"validate"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "authToken",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
