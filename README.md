@@ -76,7 +76,7 @@ This API requires a **JWT token** for secured endpoints.
 ```json
 {
   "username": "admin",
-  "password": "password123"
+  "password": "password"
 }
 ```
 **Response:**
@@ -164,16 +164,12 @@ Use this token in the `Authorization` header for secured requests.
 ---
 
 ## 🚀 Deployment
-### 🌎 Hosting Options
-- **Render**: `https://gen-ai-query-api.onrender.com`
-- **Heroku**: `https://gen-ai-query-api.herokuapp.com`
-- **Railway**: `https://gen-ai-query-api.up.railway.app`
+- **Render**: `https://mini-data-query-simulation-engine-4t04.onrender.com`
 
 ### 🔧 Deployment Steps
 1. Push code to **GitHub**.
 2. Link GitHub repository to **Render/Heroku/Railway**.
-3. Set up environment variables (`SECRET_KEY`, `PORT`).
-4. Deploy and test the API.
+3. Deploy and test the API.
 
 ---
 
@@ -196,4 +192,4 @@ For any issues, report them in the [GitHub Issues](https://github.com/youruserna
 ---
 
 ## 📩 Contact
-For any inquiries, reach out at **your-email@example.com**.
+For any inquiries, reach out at **harsh.code0@gmail.com**.
