@@ -33,7 +33,7 @@ Gen-AI-Query-API/
 │── .env                        # Environment variables
 │── package.json                # Dependencies and scripts
 │── README.md                   # Documentation
-│── Postman_Collection.json      # Postman collection for testing
+│── mini_query_solver.Postman_Collection.json      # Postman collection for testing
 ```
 
 ---
